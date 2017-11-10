@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="mocha 前端测试框架安装mocha首先需要一个nodejs环境,比如说新建一个工程mocha-test1234mkdir mocha-testcd mocha-testnpm initnpm install -s mocha 为了方便可以全局安装1npm install -g mocha">
+<meta name="description" content="mocha 前端测试框架安装mocha首先需要一个nodejs环境,比如说新建一个工程mocha-test1234mkdir mocha-testcd mocha-testnpm initnpm install -s mocha 为了方便可以全局安装1npm install -g mocha 编写单元测试用例12345//add.jsfunction add(a,b)&amp;#123;    retur">
 <meta name="keywords" content="nodejs,测试,macha">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端测试框架-mocha">
 <meta property="og:url" content="http://www.xubowen.iego.cn/2017/08/23/前端测试框架-mocha/index.html">
 <meta property="og:site_name" content="Laplace">
-<meta property="og:description" content="mocha 前端测试框架安装mocha首先需要一个nodejs环境,比如说新建一个工程mocha-test1234mkdir mocha-testcd mocha-testnpm initnpm install -s mocha 为了方便可以全局安装1npm install -g mocha">
-<meta property="og:updated_time" content="2017-08-23T13:32:34.775Z">
+<meta property="og:description" content="mocha 前端测试框架安装mocha首先需要一个nodejs环境,比如说新建一个工程mocha-test1234mkdir mocha-testcd mocha-testnpm initnpm install -s mocha 为了方便可以全局安装1npm install -g mocha 编写单元测试用例12345//add.jsfunction add(a,b)&amp;#123;    retur">
+<meta property="og:updated_time" content="2017-08-24T14:04:57.411Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端测试框架-mocha">
-<meta name="twitter:description" content="mocha 前端测试框架安装mocha首先需要一个nodejs环境,比如说新建一个工程mocha-test1234mkdir mocha-testcd mocha-testnpm initnpm install -s mocha 为了方便可以全局安装1npm install -g mocha">
+<meta name="twitter:description" content="mocha 前端测试框架安装mocha首先需要一个nodejs环境,比如说新建一个工程mocha-test1234mkdir mocha-testcd mocha-testnpm initnpm install -s mocha 为了方便可以全局安装1npm install -g mocha 编写单元测试用例12345//add.jsfunction add(a,b)&amp;#123;    retur">
 
 
 
@@ -398,6 +398,9 @@
       
         <h2 id="mocha-前端测试框架"><a href="#mocha-前端测试框架" class="headerlink" title="mocha 前端测试框架"></a>mocha 前端测试框架</h2><h3 id="安装mocha"><a href="#安装mocha" class="headerlink" title="安装mocha"></a>安装mocha</h3><p>首先需要一个nodejs环境,比如说新建一个工程mocha-test<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">mkdir mocha-test</div><div class="line"><span class="built_in">cd</span> mocha-test</div><div class="line">npm init</div><div class="line">npm install -s mocha</div></pre></td></tr></table></figure></p>
 <p>为了方便可以全局安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g mocha</div></pre></td></tr></table></figure></p>
+<h3 id="编写单元测试用例"><a href="#编写单元测试用例" class="headerlink" title="编写单元测试用例"></a>编写单元测试用例</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//add.js</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> a+b;</div><div class="line">&#125;</div><div class="line"><span class="built_in">module</span>.exports=add;</div></pre></td></tr></table></figure>
+<p>测试用例<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> add = <span class="built_in">require</span>(<span class="string">'./add'</span>);</div><div class="line"><span class="keyword">var</span> expect = <span class="built_in">require</span>(<span class="string">'chai'</span>).expect;</div><div class="line">describe(<span class="string">'加法函数测试'</span>,<span class="function"><span class="keyword">function</span>  (<span class="params"> </span>) </span>&#123;</div><div class="line">     it(<span class="string">'1+1=2'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        expect(add(<span class="number">1</span>,<span class="number">1</span>)).to.be.equal(<span class="number">2</span>);</div><div class="line">     &#125;);</div><div class="line">      it(<span class="string">'2+1=3'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        expect(add(<span class="number">2</span>,<span class="number">1</span>)).to.be.equal(<span class="number">3</span>);</div><div class="line">     &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>其中<code>require(&#39;chai&#39;).expect</code>为第三方的一个断言库。describe为开始一个测试套件,it为一个测试用例。<br>具体断言库的使用还需要参考具具体的API</p>
 
       
     </div>
@@ -453,6 +456,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/08/axios-vue跨域/" rel="prev" title="axios-vue跨域">
+                axios-vue跨域 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -526,7 +533,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -548,7 +555,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -583,7 +590,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#mocha-前端测试框架"><span class="nav-number">1.</span> <span class="nav-text">mocha 前端测试框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装mocha"><span class="nav-number">1.1.</span> <span class="nav-text">安装mocha</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#mocha-前端测试框架"><span class="nav-number">1.</span> <span class="nav-text">mocha 前端测试框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装mocha"><span class="nav-number">1.1.</span> <span class="nav-text">安装mocha</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写单元测试用例"><span class="nav-number">1.2.</span> <span class="nav-text">编写单元测试用例</span></a></li></ol></li></ol></div>
             
 
           </div>
